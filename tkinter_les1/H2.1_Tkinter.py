@@ -1,18 +1,15 @@
-import tkinter
+from pickletools import optimize
+from ssl import Options
+import tkinter, json
 
 root = tkinter.Tk()
 
-options = {
-    "title": "Generic Title",
-    "favicon": "favicon.ico",
-    "bgcolor": "red",
-    "ratio": "600x400",
-}
+options = json.load(open("config.json"))
 
 root.title(options["title"])
 root.geometry(options["ratio"])
 root.wm_iconbitmap(options["favicon"])
-root.configure(options["bgcolor"])
+root.configure(bg=options["bgcolor"])
 
 # Main
 root.mainloop()
