@@ -1,10 +1,10 @@
-from pickletools import optimize
-from ssl import Options
+# Imports
 import tkinter, json
 
+# Vars
 root = tkinter.Tk()
-
 options = json.load(open("config.json"))
+
 
 root.title(options["title"])
 root.geometry(options["ratio"])
